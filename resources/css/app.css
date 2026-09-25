@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+@config "../../tailwind.config.js";
+
+@theme {
+  --color-brand-dark: #1E3A8A;
+  --color-brand-accent: #6366F1;
+  --color-brand-bg: #F8FAFC;
+  --color-badge-green: #10B981;
+  --color-badge-red: #EF4444;
+  --color-badge-blue: #3B82F6;
+  --color-badge-amber: #F59E0B;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* Custom scrollbar and animations */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Hide scrollbar utility for clean pill tracks and carousels */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Sidebar scrollbar styling */
+.custom-sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+}
+.custom-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Slide-over Filter Drawer (Exact Right-Side Drawer) */
+.filter-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-drawer-overlay[style*="display: none"] {
+  display: none !important;
+}
+
+.filter-drawer-panel {
+  width: 100% !important;
+  max-width: 380px !important;
+  background-color: #ffffff !important;
+  height: 100% !important;
+  box-shadow: -10px 0 30px -5px rgba(0, 0, 0, 0.18) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 1.75rem 1.75rem !important;
+  overflow-y: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.filter-btn-apply {
+  background-color: #23677a !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.65rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  box-shadow: 0 4px 10px rgba(35, 103, 122, 0.3) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.filter-btn-apply:hover {
+  background-color: #1a505f !important;
+}
+
+/* Bundle card sizing matching 5-column grid of Latest Releases */
+.bundle-card-item {
+  flex: 0 0 calc((100% - 0.875rem) / 2) !important;
+  max-width: calc((100% - 0.875rem) / 2) !important;
+  width: calc((100% - 0.875rem) / 2) !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .bundle-card-item {
+    flex: 0 0 calc((100% - 2rem) / 3) !important;
+    max-width: calc((100% - 2rem) / 3) !important;
+    width: calc((100% - 2rem) / 3) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .bundle-card-item {
+    flex: 0 0 calc((100% - 3rem) / 4) !important;
+    max-width: calc((100% - 3rem) / 4) !important;
+    width: calc((100% - 3rem) / 4) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bundle-card-item {
+    flex: 0 0 calc((100% - 4rem) / 5) !important;
+    max-width: calc((100% - 4rem) / 5) !important;
+    width: calc((100% - 4rem) / 5) !important;
+  }
+}
+
