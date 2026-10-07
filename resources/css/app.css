@@ -3,6 +3,7 @@
 @config "../../tailwind.config.js";
 
 @theme {
+  --font-sans: 'Plus Jakarta Sans', 'Kantumruy Pro', sans-serif;
   --color-brand-dark: #1E3A8A;
   --color-brand-accent: #6366F1;
   --color-brand-bg: #F8FAFC;

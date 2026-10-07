@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', '"Kantumruy Pro"', 'sans-serif'],
+      },
       colors: {
         brand: {
           dark: '#1E3A8A',   // Deep Blue សម្រាប់ Sidebar និង Headings

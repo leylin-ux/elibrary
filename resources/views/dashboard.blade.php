@@ -134,15 +134,16 @@
                     <span class="w-2 h-2 rounded-full bg-blue-500"></span>
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">{{ __('Daily Circulation Growth') }}</span>
                 </div>
-                <div class="flex items-baseline gap-2 pt-1">
-                    <span class="text-2xl font-black text-slate-800">{{ number_format($todayBorrows) }} <span class="text-xs font-medium text-slate-400 font-sans">{{ __('loans today') }}</span></span>
+                <div class="flex items-baseline gap-2 pt-1 flex-wrap">
+                    <span class="text-2xl font-bold sm:font-extrabold text-slate-800">{{ number_format($todayBorrows) }}</span>
+                    <span class="text-xs font-medium text-slate-500 whitespace-nowrap">{{ __('loans today') }}</span>
                     @if($dailyGrowth >= 0)
-                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                             +{{ $dailyGrowth }}%
                         </span>
                     @else
-                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                             {{ $dailyGrowth }}%
                         </span>
@@ -162,15 +163,16 @@
                     <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">{{ __('Weekly Circulation Growth') }}</span>
                 </div>
-                <div class="flex items-baseline gap-2 pt-1">
-                    <span class="text-2xl font-black text-slate-800">{{ number_format($thisWeekBorrows) }} <span class="text-xs font-medium text-slate-400 font-sans">{{ __('loans this week') }}</span></span>
+                <div class="flex items-baseline gap-2 pt-1 flex-wrap">
+                    <span class="text-2xl font-bold sm:font-extrabold text-slate-800">{{ number_format($thisWeekBorrows) }}</span>
+                    <span class="text-xs font-medium text-slate-500 whitespace-nowrap">{{ __('loans this week') }}</span>
                     @if($weeklyGrowth >= 0)
-                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                             +{{ $weeklyGrowth }}%
                         </span>
                     @else
-                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                             {{ $weeklyGrowth }}%
                         </span>
@@ -190,15 +192,16 @@
                     <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">{{ __('Monthly Circulation Growth') }}</span>
                 </div>
-                <div class="flex items-baseline gap-2 pt-1">
-                    <span class="text-2xl font-black text-slate-800">{{ number_format($thisMonthBorrows) }} <span class="text-xs font-medium text-slate-400 font-sans">{{ __('loans this month') }}</span></span>
+                <div class="flex items-baseline gap-2 pt-1 flex-wrap">
+                    <span class="text-2xl font-bold sm:font-extrabold text-slate-800">{{ number_format($thisMonthBorrows) }}</span>
+                    <span class="text-xs font-medium text-slate-500 whitespace-nowrap">{{ __('loans this month') }}</span>
                     @if($monthlyGrowth >= 0)
-                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                             +{{ $monthlyGrowth }}%
                         </span>
                     @else
-                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                             {{ $monthlyGrowth }}%
                         </span>
@@ -218,15 +221,16 @@
                     <span class="w-2 h-2 rounded-full bg-amber-500"></span>
                     <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">{{ __('Yearly Circulation Growth') }}</span>
                 </div>
-                <div class="flex items-baseline gap-2 pt-1">
-                    <span class="text-2xl font-black text-slate-800">{{ number_format($thisYearBorrows) }} <span class="text-xs font-medium text-slate-400 font-sans">{{ __('loans this year') }}</span></span>
+                <div class="flex items-baseline gap-2 pt-1 flex-wrap">
+                    <span class="text-2xl font-bold sm:font-extrabold text-slate-800">{{ number_format($thisYearBorrows) }}</span>
+                    <span class="text-xs font-medium text-slate-500 whitespace-nowrap">{{ __('loans this year') }}</span>
                     @if($yearlyGrowth >= 0)
-                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
                             +{{ $yearlyGrowth }}%
                         </span>
                     @else
-                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60">
+                        <span class="inline-flex items-center text-xs font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-200/60 shrink-0">
                             <svg class="w-3.5 h-3.5 mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                             {{ $yearlyGrowth }}%
                         </span>

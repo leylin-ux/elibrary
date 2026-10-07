@@ -46,6 +46,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->name('password.forgot');
 Route::post('/reset-password-direct', [AuthController::class, 'resetPasswordDirect'])->name('password.reset.direct');
+Route::get('/refresh-csrf', function () {
+    return response()->json(['token' => csrf_token()]);
+})->name('csrf.refresh');
 
 // Real Google OAuth 2.0
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');

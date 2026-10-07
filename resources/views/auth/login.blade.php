@@ -1037,5 +1037,34 @@
             </div>
         </div>
     </div>
+
+    <!-- Keep CSRF Token Fresh & Prevent Session Expiry while tab is open -->
+    <script>
+        (function() {
+            function updateCsrfToken() {
+                fetch('{{ route('csrf.refresh') }}', { credentials: 'same-origin' })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && data.token) {
+                            document.querySelectorAll('input[name="_token"]').forEach(input => input.value = data.token);
+                            const meta = document.querySelector('meta[name="csrf-token"]');
+                            if (meta) meta.setAttribute('content', data.token);
+                        }
+                    })
+                    .catch(() => {});
+            }
+
+            // Refresh token when user returns to this tab
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'visible') {
+                    updateCsrfToken();
+                }
+            });
+            window.addEventListener('focus', updateCsrfToken);
+
+            // Keepalive ping every 25 minutes to prevent session timeout
+            setInterval(updateCsrfToken, 25 * 60 * 1000);
+        })();
+    </script>
 </body>
 </html>
